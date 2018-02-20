@@ -24,75 +24,77 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView numbersCat;
+    TextView familyCat;
+    TextView colorsCat;
+    TextView phrasesCat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Find the View that shows the numbers category
-        TextView numbers = (TextView) findViewById(R.id.numbers);
+        numbersCat = (TextView) findViewById(R.id.numbers);
+        familyCat = (TextView) findViewById(R.id.family);
+        colorsCat = (TextView) findViewById(R.id.colors);
+        phrasesCat = (TextView) findViewById(R.id.phrases);
 
-        // Set a click listener on that View
-        numbers.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the numbers category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
-                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+        if (numbersCat != null) {
+            numbersCat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openNumbersList(numbersCat);
+                }
+            });
 
-                // Start the new activity
-                startActivity(numbersIntent);
-            }
-        });
+        }
 
-        // Find the View that shows the family category
-        TextView family = (TextView) findViewById(R.id.family);
+        if (familyCat != null) {
+            familyCat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openFamilyList(familyCat);
+                }
+            });
+        }
 
-        // Set a click listener on that View
-        family.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link FamilyActivity}
-                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+        if (colorsCat != null) {
+            colorsCat.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    openColorsList(colorsCat);
+                }
+            });
+        }
 
-                // Start the new activity
-                startActivity(familyIntent);
-            }
-        });
-
-        // Find the View that shows the colors category
-        TextView colors = (TextView) findViewById(R.id.colors);
-
-        // Set a click listener on that View
-        colors.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the colors category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ColorsActivity}
-                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
-
-                // Start the new activity
-                startActivity(colorsIntent);
-            }
-        });
-
-        // Find the View that shows the phrases category
-        TextView phrases = (TextView) findViewById(R.id.phrases);
-
-        // Set a click listener on that View
-        phrases.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the phrases category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link PhrasesActivity}
-                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-
-                // Start the new activity
-                startActivity(phrasesIntent);
-            }
-        });
+        if (phrasesCat != null) {
+            phrasesCat.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    openPhrasesList(phrasesCat);
+                }
+            });
+        }
     }
+
+    public void openNumbersList (View view){
+        Intent numbersList = new Intent (this, NumbersActivity.class);
+        startActivity(numbersList);
+    }
+
+    public void openFamilyList (View view)  {
+        Intent familyList = new Intent(this, FamilyActivity.class);
+        startActivity(familyList);
+    }
+
+    public void openColorsList (View view) {
+        Intent colorsList = new Intent (this, ColorsActivity.class);
+        startActivity(colorsList);
+    }
+
+    public void openPhrasesList (View view) {
+        Intent phrasesList = new Intent (this, PhrasesActivity.class);
+        startActivity(phrasesList);
+    }
+
 }
