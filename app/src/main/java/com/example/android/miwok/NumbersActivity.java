@@ -18,6 +18,8 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -40,16 +42,14 @@ public class NumbersActivity extends AppCompatActivity {
         engNumbers.add(getString(R.string.eng_9));
         engNumbers.add(getString(R.string.eng_10));
 
-        Log.v("NumbersActivity", "Word at index 0 = " + engNumbers.get(0));
-        Log.v("NumbersActivity", "Word at index 1 = " + engNumbers.get(1));
-        Log.v("NumbersActivity", "Word at index 2 = " + engNumbers.get(2));
-        Log.v("NumbersActivity", "Word at index 3 = " + engNumbers.get(3));
-        Log.v("NumbersActivity", "Word at index 4 = " + engNumbers.get(4));
-        Log.v("NumbersActivity", "Word at index 5 = " + engNumbers.get(5));
-        Log.v("NumbersActivity", "Word at index 6 = " + engNumbers.get(6));
-        Log.v("NumbersActivity", "Word at index 7 = " + engNumbers.get(7));
-        Log.v("NumbersActivity", "Word at index 8 = " + engNumbers.get(8));
-        Log.v("NumbersActivity", "Word at index 9 = " + engNumbers.get(9));
+        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+
+        for ( int i=0; i<engNumbers.size(); i++) {
+            TextView numberView = new TextView (this);
+            rootView.addView(numberView);
+            numberView.setText(engNumbers.get(i));
+        }
+
 
 
     }
