@@ -37,4 +37,14 @@
     <string name="eng_8">eight</string>
     <string name="eng_9">nine</string>
     <string name="eng_10">ten</string>
+    <string name="miw_1">lutti</string>
+    <string name="miw_2">otiiko</string>
+    <string name="miw_3">tolookosu</string>
+    <string name="miw_4">oyyisa</string>
+    <string name="miw_5">massokka</string>
+    <string name="miw_6">temmokka</string>
+    <string name="miw_7">kenekaku</string>
+    <string name="miw_8">kawinta</string>
+    <string name="miw_9">wo\’e</string>
+    <string name="miw_10">na\’aacha</string>
 </resources>

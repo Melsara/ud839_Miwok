@@ -33,23 +33,23 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> engNumbers = new ArrayList<String>();
-        engNumbers.add(getString(R.string.eng_1));
-        engNumbers.add(getString(R.string.eng_2));
-        engNumbers.add(getString(R.string.eng_3));
-        engNumbers.add(getString(R.string.eng_4));
-        engNumbers.add(getString(R.string.eng_5));
-        engNumbers.add(getString(R.string.eng_6));
-        engNumbers.add(getString(R.string.eng_7));
-        engNumbers.add(getString(R.string.eng_8));
-        engNumbers.add(getString(R.string.eng_9));
-        engNumbers.add(getString(R.string.eng_10));
+        ArrayList<Word> words = new ArrayList<Word>();
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, engNumbers);
+        words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1)));
+        words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2)));
+        words.add(new Word(getString(R.string.miw_3), getString(R.string.eng_3)));
+        words.add(new Word(getString(R.string.miw_4), getString(R.string.eng_4)));
+        words.add(new Word(getString(R.string.miw_5), getString(R.string.eng_5)));
+        words.add(new Word(getString(R.string.miw_6), getString(R.string.eng_6)));
+        words.add(new Word(getString(R.string.miw_7), getString(R.string.eng_7)));
+        words.add(new Word(getString(R.string.miw_8), getString(R.string.eng_8)));
+        words.add(new Word(getString(R.string.miw_9), getString(R.string.eng_9)));
+        words.add(new Word(getString(R.string.miw_10), getString(R.string.eng_10)));
+
+        WordAdapter wordsAdapter = new WordAdapter(this, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
-
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(wordsAdapter);
 
 
 
