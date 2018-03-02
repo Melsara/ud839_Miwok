@@ -17,12 +17,34 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.activity_words);
+
+        ArrayList<Word> words = new ArrayList<Word>();
+
+        words.add(new Word(getString(R.string.miw_father), getString(R.string.eng_father)));
+        words.add(new Word(getString(R.string.miw_mother), getString(R.string.eng_mother)));
+        words.add(new Word(getString(R.string.miw_son), getString(R.string.eng_son)));
+        words.add(new Word(getString(R.string.miw_daughter), getString(R.string.eng_daughter)));
+        words.add(new Word(getString(R.string.miw_older_brother), getString(R.string.eng_older_brother)));
+        words.add(new Word(getString(R.string.miw_younger_brother), getString(R.string.eng_younger_brother)));
+        words.add(new Word(getString(R.string.miw_older_sister), getString(R.string.eng_older_sister)));
+        words.add(new Word(getString(R.string.miw_younger_sister), getString(R.string.eng_younger_sister)));
+        words.add(new Word(getString(R.string.miw_grandmother), getString(R.string.eng_grandmother)));
+        words.add(new Word(getString(R.string.miw_grandfather), getString(R.string.eng_grandfather)));
+
+        WordAdapter wordsAdapter = new WordAdapter(this, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(wordsAdapter);
+
     }
 }
