@@ -17,12 +17,34 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.activity_words);
+
+        ArrayList<Word> words = new ArrayList<Word>();
+
+        words.add(new Word(getString(R.string.miw_phrase1), getString(R.string.eng_phrase1)));
+        words.add(new Word(getString(R.string.miw_phrase2), getString(R.string.eng_phrase2)));
+        words.add(new Word(getString(R.string.miw_phrase3), getString(R.string.eng_phrase3)));
+        words.add(new Word(getString(R.string.miw_phrase4), getString(R.string.eng_phrase4)));
+        words.add(new Word(getString(R.string.miw_phrase5), getString(R.string.eng_phrase5)));
+        words.add(new Word(getString(R.string.miw_phrase6), getString(R.string.eng_phrase6)));
+        words.add(new Word(getString(R.string.miw_phrase7), getString(R.string.eng_phrase7)));
+        words.add(new Word(getString(R.string.miw_phrase8), getString(R.string.eng_phrase8)));
+        words.add(new Word(getString(R.string.miw_phrase9), getString(R.string.eng_phrase9)));
+        words.add(new Word(getString(R.string.miw_phrase10), getString(R.string.eng_phrase10)));
+
+        WordAdapter wordsAdapter = new WordAdapter(this, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(wordsAdapter);
+
     }
 }
