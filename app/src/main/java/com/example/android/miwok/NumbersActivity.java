@@ -30,16 +30,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1)));
-        words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2)));
-        words.add(new Word(getString(R.string.miw_3), getString(R.string.eng_3)));
-        words.add(new Word(getString(R.string.miw_4), getString(R.string.eng_4)));
-        words.add(new Word(getString(R.string.miw_5), getString(R.string.eng_5)));
-        words.add(new Word(getString(R.string.miw_6), getString(R.string.eng_6)));
-        words.add(new Word(getString(R.string.miw_7), getString(R.string.eng_7)));
-        words.add(new Word(getString(R.string.miw_8), getString(R.string.eng_8)));
-        words.add(new Word(getString(R.string.miw_9), getString(R.string.eng_9)));
-        words.add(new Word(getString(R.string.miw_10), getString(R.string.eng_10)));
+        words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1), R.drawable.number_one));
+        words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2), R.drawable.number_two));
+        words.add(new Word(getString(R.string.miw_3), getString(R.string.eng_3), R.drawable.number_three));
+        words.add(new Word(getString(R.string.miw_4), getString(R.string.eng_4), R.drawable.number_four));
+        words.add(new Word(getString(R.string.miw_5), getString(R.string.eng_5), R.drawable.number_five));
+        words.add(new Word(getString(R.string.miw_6), getString(R.string.eng_6), R.drawable.number_six));
+        words.add(new Word(getString(R.string.miw_7), getString(R.string.eng_7), R.drawable.number_seven));
+        words.add(new Word(getString(R.string.miw_8), getString(R.string.eng_8), R.drawable.number_eight));
+        words.add(new Word(getString(R.string.miw_9), getString(R.string.eng_9), R.drawable.number_nine));
+        words.add(new Word(getString(R.string.miw_10), getString(R.string.eng_10), R.drawable.number_ten));
 
         WordAdapter wordsAdapter = new WordAdapter(this, words);
 
