@@ -30,16 +30,16 @@ public class FamilyActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word(getString(R.string.miw_father), getString(R.string.eng_father)));
-        words.add(new Word(getString(R.string.miw_mother), getString(R.string.eng_mother)));
-        words.add(new Word(getString(R.string.miw_son), getString(R.string.eng_son)));
-        words.add(new Word(getString(R.string.miw_daughter), getString(R.string.eng_daughter)));
-        words.add(new Word(getString(R.string.miw_older_brother), getString(R.string.eng_older_brother)));
-        words.add(new Word(getString(R.string.miw_younger_brother), getString(R.string.eng_younger_brother)));
-        words.add(new Word(getString(R.string.miw_older_sister), getString(R.string.eng_older_sister)));
-        words.add(new Word(getString(R.string.miw_younger_sister), getString(R.string.eng_younger_sister)));
-        words.add(new Word(getString(R.string.miw_grandmother), getString(R.string.eng_grandmother)));
-        words.add(new Word(getString(R.string.miw_grandfather), getString(R.string.eng_grandfather)));
+        words.add(new Word(getString(R.string.miw_father), getString(R.string.eng_father), R.drawable.family_father));
+        words.add(new Word(getString(R.string.miw_mother), getString(R.string.eng_mother), R.drawable.family_mother));
+        words.add(new Word(getString(R.string.miw_son), getString(R.string.eng_son), R.drawable.family_son));
+        words.add(new Word(getString(R.string.miw_daughter), getString(R.string.eng_daughter), R.drawable.family_daughter));
+        words.add(new Word(getString(R.string.miw_older_brother), getString(R.string.eng_older_brother), R.drawable.family_older_brother));
+        words.add(new Word(getString(R.string.miw_younger_brother), getString(R.string.eng_younger_brother), R.drawable.family_younger_brother));
+        words.add(new Word(getString(R.string.miw_older_sister), getString(R.string.eng_older_sister), R.drawable.family_older_sister));
+        words.add(new Word(getString(R.string.miw_younger_sister), getString(R.string.eng_younger_sister), R.drawable.family_younger_sister));
+        words.add(new Word(getString(R.string.miw_grandmother), getString(R.string.eng_grandmother), R.drawable.family_grandmother));
+        words.add(new Word(getString(R.string.miw_grandfather), getString(R.string.eng_grandfather), R.drawable.family_grandfather));
 
         WordAdapter wordsAdapter = new WordAdapter(this, words);
 
