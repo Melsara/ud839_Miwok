@@ -30,16 +30,16 @@ public class PhrasesActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word(getString(R.string.miw_phrase1), getString(R.string.eng_phrase1)));
-        words.add(new Word(getString(R.string.miw_phrase2), getString(R.string.eng_phrase2)));
-        words.add(new Word(getString(R.string.miw_phrase3), getString(R.string.eng_phrase3)));
-        words.add(new Word(getString(R.string.miw_phrase4), getString(R.string.eng_phrase4)));
-        words.add(new Word(getString(R.string.miw_phrase5), getString(R.string.eng_phrase5)));
-        words.add(new Word(getString(R.string.miw_phrase6), getString(R.string.eng_phrase6)));
-        words.add(new Word(getString(R.string.miw_phrase7), getString(R.string.eng_phrase7)));
-        words.add(new Word(getString(R.string.miw_phrase8), getString(R.string.eng_phrase8)));
-        words.add(new Word(getString(R.string.miw_phrase9), getString(R.string.eng_phrase9)));
-        words.add(new Word(getString(R.string.miw_phrase10), getString(R.string.eng_phrase10)));
+        words.add(new Word(getString(R.string.miw_phrase1), getString(R.string.eng_phrase1), R.raw.phrase_where_are_you_going));
+        words.add(new Word(getString(R.string.miw_phrase2), getString(R.string.eng_phrase2), R.raw.phrase_what_is_your_name));
+        words.add(new Word(getString(R.string.miw_phrase3), getString(R.string.eng_phrase3), R.raw.phrase_my_name_is));
+        words.add(new Word(getString(R.string.miw_phrase4), getString(R.string.eng_phrase4), R.raw.phrase_how_are_you_feeling));
+        words.add(new Word(getString(R.string.miw_phrase5), getString(R.string.eng_phrase5), R.raw.phrase_im_feeling_good));
+        words.add(new Word(getString(R.string.miw_phrase6), getString(R.string.eng_phrase6), R.raw.phrase_are_you_coming));
+        words.add(new Word(getString(R.string.miw_phrase7), getString(R.string.eng_phrase7), R.raw.phrase_yes_im_coming));
+        words.add(new Word(getString(R.string.miw_phrase8), getString(R.string.eng_phrase8), R.raw.phrase_im_coming));
+        words.add(new Word(getString(R.string.miw_phrase9), getString(R.string.eng_phrase9), R.raw.phrase_lets_go));
+        words.add(new Word(getString(R.string.miw_phrase10), getString(R.string.eng_phrase10), R.raw.phrase_come_here));
 
         WordAdapter wordsAdapter = new WordAdapter(this, words, R.color.category_phrases);
 

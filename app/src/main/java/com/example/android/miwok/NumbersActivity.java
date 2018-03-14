@@ -35,16 +35,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1), R.drawable.number_one));
-        words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2), R.drawable.number_two));
-        words.add(new Word(getString(R.string.miw_3), getString(R.string.eng_3), R.drawable.number_three));
-        words.add(new Word(getString(R.string.miw_4), getString(R.string.eng_4), R.drawable.number_four));
-        words.add(new Word(getString(R.string.miw_5), getString(R.string.eng_5), R.drawable.number_five));
-        words.add(new Word(getString(R.string.miw_6), getString(R.string.eng_6), R.drawable.number_six));
-        words.add(new Word(getString(R.string.miw_7), getString(R.string.eng_7), R.drawable.number_seven));
-        words.add(new Word(getString(R.string.miw_8), getString(R.string.eng_8), R.drawable.number_eight));
-        words.add(new Word(getString(R.string.miw_9), getString(R.string.eng_9), R.drawable.number_nine));
-        words.add(new Word(getString(R.string.miw_10), getString(R.string.eng_10), R.drawable.number_ten));
+        words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1), R.drawable.number_one, R.raw.number_one));
+        words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2), R.drawable.number_two, R.raw.number_two));
+        words.add(new Word(getString(R.string.miw_3), getString(R.string.eng_3), R.drawable.number_three, R.raw.number_three));
+        words.add(new Word(getString(R.string.miw_4), getString(R.string.eng_4), R.drawable.number_four, R.raw.number_four));
+        words.add(new Word(getString(R.string.miw_5), getString(R.string.eng_5), R.drawable.number_five, R.raw.number_five));
+        words.add(new Word(getString(R.string.miw_6), getString(R.string.eng_6), R.drawable.number_six, R.raw.number_six));
+        words.add(new Word(getString(R.string.miw_7), getString(R.string.eng_7), R.drawable.number_seven, R.raw.number_seven));
+        words.add(new Word(getString(R.string.miw_8), getString(R.string.eng_8), R.drawable.number_eight, R.raw.number_eight));
+        words.add(new Word(getString(R.string.miw_9), getString(R.string.eng_9), R.drawable.number_nine, R.raw.number_nine));
+        words.add(new Word(getString(R.string.miw_10), getString(R.string.eng_10), R.drawable.number_ten, R.raw.number_ten));
 
         WordAdapter wordsAdapter = new WordAdapter(this, words, R.color.category_numbers);
 

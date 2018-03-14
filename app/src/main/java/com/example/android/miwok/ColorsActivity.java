@@ -30,14 +30,14 @@ public class ColorsActivity extends AppCompatActivity {
 
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word(getString(R.string.miw_red), getString(R.string.eng_red), R.drawable.color_red));
-        words.add(new Word(getString(R.string.miw_green), getString(R.string.eng_green), R.drawable.color_green));
-        words.add(new Word(getString(R.string.miw_brown), getString(R.string.eng_brown), R.drawable.color_brown));
-        words.add(new Word(getString(R.string.miw_grey), getString(R.string.eng_grey), R.drawable.color_gray));
-        words.add(new Word(getString(R.string.miw_black), getString(R.string.eng_black), R.drawable.color_black));
-        words.add(new Word(getString(R.string.miw_white), getString(R.string.eng_white), R.drawable.color_white));
-        words.add(new Word(getString(R.string.miw_dust_yellow), getString(R.string.eng_dust_yellow), R.drawable.color_dusty_yellow));
-        words.add(new Word(getString(R.string.miw_mustard_yellow), getString(R.string.eng_mustard_yellow), R.drawable.color_mustard_yellow));
+        words.add(new Word(getString(R.string.miw_red), getString(R.string.eng_red), R.drawable.color_red, R.raw.color_red));
+        words.add(new Word(getString(R.string.miw_green), getString(R.string.eng_green), R.drawable.color_green, R.raw.color_green));
+        words.add(new Word(getString(R.string.miw_brown), getString(R.string.eng_brown), R.drawable.color_brown, R.raw.color_brown));
+        words.add(new Word(getString(R.string.miw_grey), getString(R.string.eng_grey), R.drawable.color_gray, R.raw.color_gray));
+        words.add(new Word(getString(R.string.miw_black), getString(R.string.eng_black), R.drawable.color_black, R.raw.color_black));
+        words.add(new Word(getString(R.string.miw_white), getString(R.string.eng_white), R.drawable.color_white, R.raw.color_white));
+        words.add(new Word(getString(R.string.miw_dust_yellow), getString(R.string.eng_dust_yellow), R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
+        words.add(new Word(getString(R.string.miw_mustard_yellow), getString(R.string.eng_mustard_yellow), R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
 
         WordAdapter wordsAdapter = new WordAdapter(this, words, R.color.category_colors);
 
