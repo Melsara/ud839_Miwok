@@ -85,9 +85,7 @@ public class FamilyActivity extends AppCompatActivity {
 
 // Request audio focus for playback
                 int resultAudioFocus = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
-                        // Use the music stream.
                         AudioManager.STREAM_MUSIC,
-                        // Request permanent focus.
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 if (resultAudioFocus == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
