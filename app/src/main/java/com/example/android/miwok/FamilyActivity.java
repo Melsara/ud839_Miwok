@@ -91,6 +91,7 @@ public class FamilyActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                releaseMediaPlayer();
                 Word word = words.get(i);
 
 // Request audio focus for playback
@@ -102,7 +103,6 @@ public class FamilyActivity extends AppCompatActivity {
 
                 if (resultAudioFocus == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     // Start playback
-                    releaseMediaPlayer();
                     MediaPlayer mediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);

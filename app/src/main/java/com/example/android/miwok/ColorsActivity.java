@@ -77,6 +77,7 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                releaseMediaPlayer();
                 Word word = words.get(i);
 
                 int resultAudioFocus = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
@@ -84,7 +85,6 @@ public class ColorsActivity extends AppCompatActivity {
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 if (resultAudioFocus == AudioManager.AUDIOFOCUS_REQUEST_GRANTED){
-                    releaseMediaPlayer();
                     mediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
