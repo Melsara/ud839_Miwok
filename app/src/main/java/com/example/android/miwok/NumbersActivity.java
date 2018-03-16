@@ -29,8 +29,8 @@ import java.util.ArrayList;
 public class NumbersActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-
     private AudioManager mAudioManager;
+
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = (new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
@@ -58,8 +58,8 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_words);
 
-        final ArrayList<Word> words = new ArrayList<Word>();
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        final ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word(getString(R.string.miw_1), getString(R.string.eng_1), R.drawable.number_one, R.raw.number_one));
         words.add(new Word(getString(R.string.miw_2), getString(R.string.eng_2), R.drawable.number_two, R.raw.number_two));
@@ -108,6 +108,7 @@ public class NumbersActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 }

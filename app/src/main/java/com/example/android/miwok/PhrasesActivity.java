@@ -31,14 +31,8 @@ import java.util.ArrayList;
 public class PhrasesActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
-    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            releaseMediaPlayer();
-        }
-    };
-
     private AudioManager mAudioManger;
+
     private AudioManager.OnAudioFocusChangeListener mOnAudioChangeFocusListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
@@ -55,13 +49,21 @@ public class PhrasesActivity extends AppCompatActivity {
         }
     };
 
+    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_words);
 
-        final ArrayList<Word> words = new ArrayList<Word>();
         mAudioManger = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        final ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word(getString(R.string.miw_phrase1), getString(R.string.eng_phrase1), R.raw.phrase_where_are_you_going));
         words.add(new Word(getString(R.string.miw_phrase2), getString(R.string.eng_phrase2), R.raw.phrase_what_is_your_name));
@@ -111,6 +113,7 @@ public class PhrasesActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
+            mAudioManger.abandonAudioFocus(mOnAudioChangeFocusListener);
         }
     }
 }
