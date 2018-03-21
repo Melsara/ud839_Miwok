@@ -20,6 +20,20 @@
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
     </style>
 
+    <style name="tabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#FFF7DA</item>
+        <item name="tabBackground">@color/primary_color</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="tabGravity">fill</item>
+    </style>
+
+    <style name="tabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
     <!-- Style for a category of vocabulary words -->
     <style name="CategoryStyle">
         <item name="android:layout_width">match_parent</item>
