@@ -17,6 +17,7 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -34,67 +35,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        numbersCat = (TextView) findViewById(R.id.numbers);
-        familyCat = (TextView) findViewById(R.id.family);
-        colorsCat = (TextView) findViewById(R.id.colors);
-        phrasesCat = (TextView) findViewById(R.id.phrases);
-
-        if (numbersCat != null) {
-            numbersCat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openNumbersList(numbersCat);
-                }
-            });
-
-        }
-
-        if (familyCat != null) {
-            familyCat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openFamilyList(familyCat);
-                }
-            });
-        }
-
-        if (colorsCat != null) {
-            colorsCat.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-                    openColorsList(colorsCat);
-                }
-            });
-        }
-
-        if (phrasesCat != null) {
-            phrasesCat.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-                    openPhrasesList(phrasesCat);
-                }
-            });
-        }
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
     }
 
-    public void openNumbersList (View view){
-        Intent numbersList = new Intent (this, NumbersActivity.class);
-        startActivity(numbersList);
-    }
-
-    public void openFamilyList (View view)  {
-        Intent familyList = new Intent(this, FamilyActivity.class);
-        startActivity(familyList);
-    }
-
-    public void openColorsList (View view) {
-        Intent colorsList = new Intent (this, ColorsActivity.class);
-        startActivity(colorsList);
-    }
-
-    public void openPhrasesList (View view) {
-        Intent phrasesList = new Intent (this, PhrasesActivity.class);
-        startActivity(phrasesList);
-    }
 
 }
