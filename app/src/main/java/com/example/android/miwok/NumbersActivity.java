@@ -36,12 +36,18 @@ public class NumbersActivity extends AppCompatActivity {
         public void onAudioFocusChange(int focusChange) {
        if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT ||
                focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-           mediaPlayer.pause();
-           mediaPlayer.seekTo(0);
+           if (mediaPlayer != null) {
+               mediaPlayer.pause();
+               mediaPlayer.seekTo(0);
+           }
        } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-           mediaPlayer.start();
+           if (mediaPlayer != null) {
+               mediaPlayer.start();
+           }
        } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-           releaseMediaPlayer();
+           if (mediaPlayer != null) {
+               releaseMediaPlayer();
+           }
        }
         }
     });

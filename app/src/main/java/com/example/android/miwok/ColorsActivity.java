@@ -18,8 +18,8 @@ package com.example.android.miwok;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -36,12 +36,18 @@ public class ColorsActivity extends AppCompatActivity {
         public void onAudioFocusChange(int focusChange) {
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT ||
                     focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                mediaPlayer.pause();
-                mediaPlayer.seekTo(0);
+                if (mediaPlayer != null) {
+                    mediaPlayer.pause();
+                    mediaPlayer.seekTo(0);
+                }
             } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                mediaPlayer.start();
+                if (mediaPlayer != null) {
+                    mediaPlayer.start();
+                }
             } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                releaseMediaPlayer();
+                if (mediaPlayer != null) {
+                    releaseMediaPlayer();
+                }
             }
         }
     };
@@ -85,7 +91,7 @@ public class ColorsActivity extends AppCompatActivity {
                         AudioManager.STREAM_MUSIC,
                         AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
-                if (resultAudioFocus == AudioManager.AUDIOFOCUS_REQUEST_GRANTED){
+                if (resultAudioFocus == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     mediaPlayer = MediaPlayer.create(ColorsActivity.this, word.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
@@ -102,8 +108,8 @@ public class ColorsActivity extends AppCompatActivity {
         releaseMediaPlayer();
     }
 
-    private void releaseMediaPlayer () {
-        if (mediaPlayer != null){
+    private void releaseMediaPlayer() {
+        if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
             mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);

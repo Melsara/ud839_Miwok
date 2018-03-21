@@ -18,10 +18,8 @@ package com.example.android.miwok;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.provider.UserDictionary;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -37,14 +35,20 @@ public class PhrasesActivity extends AppCompatActivity {
         @Override
         public void onAudioFocusChange(int focusChange) {
 
-            if (focusChange == AudioManager. AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK ||
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK ||
                     focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
-                mediaPlayer.pause();
-                mediaPlayer.seekTo(0);
+                if (mediaPlayer != null) {
+                    mediaPlayer.pause();
+                    mediaPlayer.seekTo(0);
+                }
             } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                mediaPlayer.start();
+                if (mediaPlayer != null) {
+                    mediaPlayer.start();
+                }
             } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                releaseMediaPlayer();
+                if (mediaPlayer != null) {
+                    releaseMediaPlayer();
+                }
             }
         }
     };
@@ -109,7 +113,7 @@ public class PhrasesActivity extends AppCompatActivity {
     }
 
 
-    private void releaseMediaPlayer () {
+    private void releaseMediaPlayer() {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
