@@ -16,6 +16,8 @@
 package com.example.android.miwok;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -37,10 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
-        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager());
+        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager(), getApplicationContext());
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.tan_background)));
 
     }
 

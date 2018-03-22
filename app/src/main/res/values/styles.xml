@@ -18,10 +18,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name = "colorAccent">@android:color/white</item>
     </style>
 
     <style name="tabLayout" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorColor">#FFF7DA</item>
+        <item name="android:textColor">@android:color/white</item>
         <item name="tabBackground">@color/primary_color</item>
         <item name="tabMode">fixed</item>
         <item name="tabMaxWidth">0dp</item>
@@ -30,7 +32,6 @@
 
     <style name="tabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@android:color/white</item>
         <item name="textAllCaps">true</item>
     </style>
 

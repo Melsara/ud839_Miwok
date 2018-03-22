@@ -1,12 +1,8 @@
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-
-import com.example.android.miwok.ColorsFragment;
-import com.example.android.miwok.FamilyFragment;
-import com.example.android.miwok.NumbersFragment;
-import com.example.android.miwok.PhrasesFragment;
 
 /**
  * Created by Sara on 21/03/2018.
@@ -14,10 +10,17 @@ import com.example.android.miwok.PhrasesFragment;
 
 public class FragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter{
 
-    private final String tabTitles[] = new String[] {MainActivity.getString(R.string.category_colors), R.string.category_family, R.string.category_numbers, R.string.category_phrases };
+    Context mContext;
+    String [] tabTitles;
 
-    public FragmentPagerAdapter(FragmentManager fm) {
+    public FragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
+        tabTitles = new String[] {mContext.getResources().getString(R.string.category_colors),
+                mContext.getResources().getString(R.string.title_family),
+                mContext.getResources().getString(R.string.category_numbers),
+                mContext.getResources().getString(R.string.category_phrases) };
+
     }
 
     @Override

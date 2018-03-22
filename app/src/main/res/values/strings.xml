@@ -27,6 +27,7 @@
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+    <string name="title_family">Family</string>
     <string name="eng_1">one</string>
     <string name="eng_2">two</string>
     <string name="eng_3">three</string>
