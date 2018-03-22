@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.tan_background)));
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.tab_selected));
+        tabLayout.setTabTextColors(getResources().getColor(R.color.tab_not_selected), getResources().getColor(R.color.tab_selected));
 
     }
-
 
 }
